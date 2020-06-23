@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors extended</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>Rock Paper Scissors Spock Lizard</header>
+
+        <div class="box">
+
+            <div class="imgbox">
+            <img data-option="rock" src="images/rock.png" alt="rock">
+            <p>ROCK</p>   
+            </div>  
+            
+            <div class="imgbox">
+            <img data-option="paper" src="images/paper.png" alt="paper">
+            <p>PAPER</p> 
+            </div>
+            
+            <div class="imgbox">
+            <img data-option="scissors" src="images/scissors.png" alt="scissors">
+            <p>SCISSORS</p> 
+            </div>
+            
+            <div class="imgbox">
+            <img data-option="spock" src="images/spock.png" alt="spock">
+            <p>SPOCK</p> 
+            </div>
+            
+            <div class="imgbox">
+            <img data-option="lizard" src="images/lizard.png" alt="lizard">
+            <p>LIZARD</p> 
+            </div>
+        </div>
+        <div class="start">
+            <button>LET'S PLAY !</button>
+            <button>HOW TO PLAY ?</button>
+        </div>
+
+        <div class="scorebox">
+            <div class="choices">
+                <p data-option="playerChoice">Player choice: <span></span></p>
+                <p data-option="compChoice">Computer choice: <span></span></p>
+                <p data-option="matchResult">Match result: <span></span></p>
+            </div>
+            <div class="statistics">
+                <p data-score="total">Games: <span></span></p>
+                <p data-score="win">Won games: <span></span></p>
+                <p data-score="lost">Lost games: <span></span></p>
+                <p data-score="draw">Draws: <span></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fullscreenCover">
+        <div class="infobox">
+            <div class="exit">X</div>
+            <div class="leftSide">
+                <p><span>ROCK</span>Strong against: lizard & scissors
+                    <span></span> Weak against: paper & spock </p>
+                <p><span>PAPER</span>Strong against: spock & rock <span></span>
+                    Weak against: scissors & lizard
+                </p>
+                <p><span>SCISSORS</span>Strong against: paper & lizard <span></span>
+                    Weak against: rock & spock
+                </p>
+                <p><span>LIZARD</span> Strong against: spock & paper <span></span>
+                    Weak against: rock & scissors
+                </p>
+                <p><span>SPOCK</span>Strong against: rock & scissors <span></span>
+                    Weak against: paper & lizard
+                </p>    
+            </div>
+            <div class="rightSide">
+            </div>
+        </div>
+    </div>        
+
+    <script src="code.js"></script>
+</body>
+</html>
