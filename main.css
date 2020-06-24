@@ -173,3 +173,81 @@ html {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
+@media (max-width: 415px) and (orientation: portrait){
+    .start {
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+    }
+    .start button {
+        font-size: 20px;
+    }
+    .scorebox {
+        display: flex;
+        flex-direction: column;
+    }
+    .choices {
+        margin-left: 0;
+    }
+    .infobox {
+        width: 92%;
+        height: 92%;
+        flex-direction: column;
+    }
+    .leftSide p span {
+        font-size: 18px;
+    }
+    .leftSide p {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .leftSide p:nth-last-of-type(1){
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 824px) and (orientation: landscape){
+    .infobox {
+        width: 92%;
+        height: 92%;
+    }
+    .leftSide {
+        flex-basis: 50%;
+    }
+
+    .leftSide p {
+        line-height: 20px;
+    }
+    .choices {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 668px) and (orientation: landscape){
+    .start {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+    }
+    .scorebox {
+        display: flex;
+        flex-direction: column;
+    }
+    .choices {
+        margin-left: 0;
+    }
+    .leftSide p span{
+        font-size: 19px;
+    }
+    .leftSide p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .leftSide {
+        flex-basis: 47%;
+    }
+}
