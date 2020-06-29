@@ -31,10 +31,6 @@ function computerRandomPick(){
 }
 
 function checkScore(player, comp){
-
-    console.log("PLAYER CHOICE " + player);
-    console.log("COMPUTER CHOICE: " + comp);
-
     if(player === comp){
         return 'draw';
     } else if ((player === "rock" && comp === "lizard") || (player === "rock" && comp === "scissors")){
@@ -54,11 +50,6 @@ function checkScore(player, comp){
 }
 
 function printToPage(player, comp, result){
-
-    // console.log("your result " + player);
-    // console.log("comp result " + player);
-    // console.log("result " + result);
-
     allSpans.forEach(item => {
         item.style.textTransform = 'uppercase';
         item.style.fontWeight = '700';
@@ -106,13 +97,8 @@ function initGame(){
         return alert("Pick one !");
     }
     game.computerChoice = computerRandomPick();
-
     const gameResult = checkScore(game.playerChoice, game.computerChoice);
-
-    console.log("game result " + gameResult);
-
     printToPage(game.playerChoice, game.computerChoice, gameResult);
-
     clearGame();
 }
 
