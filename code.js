@@ -1,55 +1,8 @@
 const imgs = [...document.querySelectorAll(".box img")];
 const startBtn = document.querySelector(".start button");
-
 const allSpans = [...document.querySelectorAll(".container span")];
-
-const numbers = {
-  win: null,
-  draw: null,
-  total: null,
-  lost: null,
-};
-
-const game = {
-  playerChoice: null,
-  computerChoice: null,
-};
-
-function playerChoice() {
-  game.playerChoice = this.dataset.option;
-  imgs.forEach((item) => {
-    item.style.border = "";
-  });
-  this.style.border = "1px solid black";
-}
-
-function computerRandomPick() {
-  const computerChoice = imgs[Math.floor(Math.random() * 5)].dataset.option;
-  return computerChoice;
-}
-
-function checkScore(player, comp) {
-  const p = player;
-  const c = comp;
-  if (p == c) {
-    return "draw";
-  } else if (
-    (p == "rock" && c == "lizard") ||
-    (p == "rock" && c == "scissors") ||
-    (p == "lizard" && c == "paper") ||
-    (p == "lizard" && c == "spock") ||
-    (p == "spock" && c == "rock") ||
-    (p == "spock" && c == "scissors") ||
-    (p == "scissors" && c == "paper") ||
-    (p == "scissors" && c == "lizard") ||
-    (p == "paper" && c == "rock") ||
-    (p == "paper" && c == "spock")
-  ) {
-    return "win";
-  } else {
-    return "lost";
-  }
-}
+const htpBtn = document.querySelector(".start button:nth-of-type(2)");
+const exitBtn = document.querySelector(".exit");
 
 function printToPage(player, comp, result) {
   allSpans.forEach((item) => {
@@ -100,32 +53,11 @@ function printToPage(player, comp, result) {
   }
 }
 
-function clearGame() {
-  imgs.forEach((item) => {
-    item.style.border = "";
-  });
-  game.playerChoice = "";
-  game.computerChoice = "";
-}
-
-function initGame() {
-  if (!game.playerChoice) {
-    return alert("Pick one !");
-  }
-  game.computerChoice = computerRandomPick();
-  const gameResult = checkScore(game.playerChoice, game.computerChoice);
-  printToPage(game.playerChoice, game.computerChoice, gameResult);
-  clearGame();
-}
-
 imgs.forEach((item) => {
   item.addEventListener("click", playerChoice);
 });
 
 startBtn.addEventListener("click", initGame);
-
-const htpBtn = document.querySelector(".start button:nth-of-type(2)");
-const exitBtn = document.querySelector(".exit");
 
 htpBtn.addEventListener("click", function () {
   document.querySelector(".container").classList.add("blur");
